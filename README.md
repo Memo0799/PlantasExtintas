@@ -46,3 +46,18 @@ plants <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesda
     ## )
 
     ## See spec(...) for full column specifications.
+
+## Filtrando los datos para resolver el ejemplo 1
+
+El código que se ejecutará a continuación, es para resolver el problema
+en el siguiente
+[slide](https://derek-corcoran-barrios.github.io/CursoProgrPres/Clase2/Clase2InvestigacionReproducible.html#29),
+para poner dentro de la base de datos, solo los datos de Chile, y solo
+usando las columnas para pais (*country*) la especie (*binomial\_name*)
+y la categoria IUCN (*red\_list\_category*).
+
+``` r
+Chile <- plants %>% 
+  dplyr::filter(country == "Chile") %>% 
+  dplyr::select(binomial_name, country, red_list_category)
+```
