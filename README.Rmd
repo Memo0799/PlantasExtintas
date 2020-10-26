@@ -34,5 +34,13 @@ El código que se ejecutará a continuación, es para resolver el problema en el
 Chile <- plants %>% 
   dplyr::filter(country == "Chile") %>% 
   dplyr::select(binomial_name, country, red_list_category)
+
+Chile
+```
+
+```{r}
+Resumen <- plants %>% dplyr::filter (continent == "South America") %>% group_by(country) %>% summarise(n_species = n())
+
+Resumen
 ```
 
